@@ -6,6 +6,11 @@
 *.lo
 *.o
 *.obj
+*.suo
+*.pdb
+*.ilk
+*.ipdb
+*.iobj
 
 # Precompiled Headers
 *.gch
@@ -25,8 +30,27 @@
 *.la
 *.a
 *.lib
+!/OpenCV_install/x86/vc16/bin/*.lib
 
 # Executables
-*.exe
+# *.exe
 *.out
 *.app
+
+*.aps
+*.filters
+*.user
+*.log
+*.tlog
+*.recipe
+*.lastbuildstate
+*.idb
+*.res
+*.BAK
+*.txt
+!bin/
+!/OpenCV_install/x86/vc16/bin/*.dll
+
+.vs/
+Debug/
+print/

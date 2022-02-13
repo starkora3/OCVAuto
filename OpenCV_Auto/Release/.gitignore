@@ -1,0 +1,5 @@
+*.dll
+*.db
+Account/
+temp/
+print/
