@@ -225,6 +225,7 @@
     <ClCompile Include="ComFunc.cpp" />
     <ClCompile Include="DlgResize.cpp" />
     <ClCompile Include="FileOperation.cpp" />
+    <ClCompile Include="MainDlg.ADB.cpp" />
     <ClCompile Include="MainDlg.cpp" />
     <ClCompile Include="MainDlg.Mouse.cpp" />
     <ClCompile Include="MainDlg.Search.cpp" />

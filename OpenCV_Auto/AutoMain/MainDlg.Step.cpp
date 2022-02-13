@@ -2295,7 +2295,9 @@ int CMainDlg::DoKeyInput(const TASK_STEP& step)
 	return RET_OK;
 }
 
-
+/**
+*  プロセスキル  サービス
+*/
 int CMainDlg::DoProcessKillService(const TASK_STEP& step){
 
 	HWND hWnd = GetTaskWindow();
@@ -2304,6 +2306,7 @@ int CMainDlg::DoProcessKillService(const TASK_STEP& step){
 		return RET_ERR;
 	}
 
+	// 指定が無ければ2時間に1回
 	UINT uTemp = (UINT)step.nStartTime;
 	if ( uTemp == 0){
 		uTemp = 7200;
@@ -2315,11 +2318,15 @@ int CMainDlg::DoProcessKillService(const TASK_STEP& step){
 	}
 	return RET_NG;
 }
+
+/**
+*  プロセスキル
+*/
 int CMainDlg::DoProcessKill()
 {
 	HWND hWnd = GetTaskWindow();
 	if (hWnd != NULL)
-	{
+	{// ウィンドウがあるなら 実行プロセスを探してkill する
 		DWORD dwPID;
 
 		GetWindowThreadProcessId(hWnd, &dwPID);
@@ -2334,13 +2341,11 @@ int CMainDlg::DoProcessKill()
 		}
 	}
 	if (!m_cStep.strExeName.IsEmpty()) {
+		// exe 名の指定があるなら、exe名でkill する。
 		CString str;
 		str.Format(_T("wmic process where \"name='%s'\" delete"), m_cStep.strExeName);
 		AddLog(str);
 		_tsystem(str);
-
 	}
-
-
 	return RET_OK;
 }

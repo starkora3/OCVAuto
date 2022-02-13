@@ -1,4 +1,4 @@
-REM emulator.exe のある位置まで移動する ※パスは環境に応じて書き換える
+REM emulator.exe のある位置まで移動する
 cd /d D:\Android\sdk\emulator
 
 REM エミュレータの起動
